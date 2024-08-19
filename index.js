@@ -17,8 +17,8 @@ app.use(cookieParser());
 
 app.get("/cookie", (req,res) => {
   
-    res.cookie("token", "123341noefn243n", {
-        httpOnly: true,
+    res.cookie("token1", "123341noefn243n", {
+      
         maxAge: 1000 * 60 * 60 * 24 * 7
     }).status(200).json({
         success: true,
@@ -28,7 +28,8 @@ app.get("/cookie", (req,res) => {
 
 app.get('/getcookie',(req,res)=> {
     const val = req.cookies.token;
-    res.json(val);
+    const val2, = req.cookies.token1;
+    res.json({val,val2});
 },)
 
 app.get('/*',(req,res)=> {
