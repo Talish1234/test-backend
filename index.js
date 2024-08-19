@@ -28,7 +28,7 @@ app.get("/cookie", (req,res) => {
 
 app.get('/getcookie',(req,res)=> {
     const val = req.cookies.token;
-    const val2, = req.cookies.token1;
+    const val2 = req.cookies.token1;
     res.json({val,val2});
 },)
 
