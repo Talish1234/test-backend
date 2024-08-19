@@ -31,7 +31,9 @@ app.get('/getcookie',(req,res)=> {
     res.json(val);
 },)
 
-
+app.get('/*',(req,res)=> {
+    res.json("working");
+})
 app.listen(3000, () => {
     console.log(`Server is running on port`);
   });
