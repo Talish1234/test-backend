@@ -19,11 +19,11 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.get("/cookie", (req,res) => {
-   const token = "var";
+   const token = "varchar";
     res.cookie("access_token", token, {
         maxAge: 90 * 24 * 60 * 60 * 1000,
         httpOnly: true,
-        domain:".vercel.app",
+        secure:true,
         sameSite: "none",
         secure: true,
     })
