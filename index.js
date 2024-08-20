@@ -10,7 +10,7 @@ app.set("trust proxy",1);
 app.use(cors({
     origin:BASE,
     credentials:true,
-    exposedHeaders: ["token"] 
+    exposedHeaders: ["access_token"] 
 }))
 
 
