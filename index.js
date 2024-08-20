@@ -20,7 +20,7 @@ app.get("/cookie", (req,res) => {
   
     res.cookie("token", "123341noefn243n", {
          secure: true,
-         httpOnly:true,
+         httpOnly:false,
          sameSite: 'None',
         partitioned: true,
         expires: new Date(Date.now() + 900000),
