@@ -23,6 +23,7 @@ app.get("/cookie", (req,res) => {
     res.cookie("access_token", token, {
         maxAge: 90 * 24 * 60 * 60 * 1000,
         httpOnly: true,
+        domain:".vercel.app",
         sameSite: "none",
         secure: true,
     })
