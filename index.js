@@ -18,11 +18,15 @@ app.use(cookieParser());
 app.get("/cookie", (req,res) => {
   
     res.cookie("token1", "123341noefn243n", {
-      secure: true,
-httpOnly:true,
-sameSite: 'None',
-        maxAge: 1000 * 60 * 60 * 24 * 7
-    }).status(200).json({
+         secure: true,
+         httpOnly:true,
+         sameSite: 'None',
+         path: '/',
+         maxAge: 1000 * 60 * 60 * 24 * 7
+    })
+    res.append('Set-Cookie', 'token1=123341noefn243n; SameSite=None; Secure; HttpOnly; Path=/; Partitioned');
+  
+    res.status(200).json({
         success: true,
         error: false
     });
@@ -31,6 +35,7 @@ sameSite: 'None',
 app.get('/getcookie',(req,res)=> {
     const val = req.cookies.token;
     const val2 = req.cookies.token1;
+    
     res.json({val,val2});
 },)
 
