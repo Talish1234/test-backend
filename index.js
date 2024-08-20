@@ -6,11 +6,10 @@ dotenv.config();
 const app = express();
 const BASE = process.env.BASE;
 
-app.set("trust proxy",1);
+
 app.use(cors({
     origin:BASE,
-    credentials:true,
-    exposedHeaders: ["access_token"] 
+    credentials:true
 }))
 
 
@@ -19,7 +18,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.get("/cookie", (req,res) => {
-   const token = "varchar";
+   const token = "varchar2";
     res.cookie("access_token", token, {
         maxAge: 90 * 24 * 60 * 60 * 1000,
         httpOnly: true,
