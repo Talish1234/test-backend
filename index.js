@@ -17,21 +17,30 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.get("/cookie", (req,res) => {
-  
+   const token = "var";
+    res.cookie("access_token", token, {
+        maxAge: 90 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+        sameSite: "none",
+        secure: true,
+    })
+        .status(200)
+        .json({
+        success: true,
+        error: false
+    });
+    /*
     res.cookie("token", "123341noefn243n", {
          secure: true,
          httpOnly:false,
          sameSite: 'None',
         partitioned: true,
         expires: new Date(Date.now() + 900000),
-    }).status(200).json({
-        success: true,
-        error: false
-    });
+    }).status(200).json();*/
 });
 
 app.get('/getcookie',(req,res)=> {
-    const val = req.cookies.token;
+    const val = req.cookies.access_token;
     
     res.json({val});
 },)
