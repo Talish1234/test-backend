@@ -21,12 +21,9 @@ app.get("/cookie", (req,res) => {
          secure: true,
          httpOnly:true,
          sameSite: 'None',
-         path: '/',
+        partitioned: true,
          maxAge: 1000 * 60 * 60 * 24 * 7
-    })
-    res.append('Set-Cookie', 'token1=123341noefn243n; SameSite=None; Secure; HttpOnly; Path=/; Partitioned');
-  
-    res.status(200).json({
+    }).status(200).json({
         success: true,
         error: false
     });
