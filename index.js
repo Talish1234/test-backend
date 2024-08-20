@@ -38,12 +38,11 @@ app.get("/cookie", (req,res) => {
         expires: new Date(Date.now() + 900000),
     }).status(200).json();*/
 });
-
 app.get('/getcookie',(req,res)=> {
     const val = req.cookies.access_token;
     
     res.json({val});
-},)
+})
 
 app.get('/*',(req,res)=> {
     res.json("working");
