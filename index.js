@@ -5,6 +5,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 const app = express();
 const BASE = process.env.BASE;
+
+app.set("trust proxy",1);
 app.use(cors({
     origin:BASE,
     credentials:true,
