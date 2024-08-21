@@ -23,7 +23,8 @@ app.get("/cookie", (req,res) => {
         maxAge: 90 * 24 * 60 * 60 * 1000,
         httpOnly: true,
         secure:true,
-        sameSite: "none"
+        sameSite: "none",
+        partitioned: true 
     })
         .status(200)
         .json({
