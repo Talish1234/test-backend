@@ -23,7 +23,7 @@ app.get("/cookie", (req,res) => {
         maxAge: 90 * 24 * 60 * 60 * 1000,
         httpOnly: true,
         secure:true,
-        domain:".onrender.com"
+        domain:".onrender.com",
         sameSite: "none"
     })
         .status(200)
